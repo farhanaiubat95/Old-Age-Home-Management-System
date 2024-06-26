@@ -1,60 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="../image/logo1.png" type="image/x-icon">
-    <link rel="stylesheet" href="./output.css">
+<?php
+require_once("ohmsfunction/function.php");
+get_header();
+?>
     <title>Home || Sunnah</title>
 </head>
 <body>
      <!-- 0E606E -->
         <div class="body w-screen min-h-screen bg-5th font-roboto ">
-        <!--=====================
-               Nav Start
-        ======================-->  
-        <div class="navbar1 w-full max-h-[100px] bg-Secondary scale-105 md:bg-black/25 shadow-md md:shadow-xl shadow-3rd fixed top-0 left-0 z-50">
-            <div class="max-w-5xl  mx-auto flex justify-between items-center py-2 px-5 sm:px-10 xl:px-0">
-            <!-- Logo Start-->
-              <div>
-                <img class="max-h-20" src="../image/logo1.png" alt="">              
-            </div>
-            <!-- Logo End-->
 
-            <!-- Menubar Start-->
-             <div class="flex flex-col md:flex-row items-center gap-2">
-                <!-- Menu Button Start-->
-               <button type="button" class="navbtn text-4xl hover:scale-125 text-primary md:hidden">
-                <i class="fa-solid fa-bars"></i>
-               </button>
-              <!-- Menu Button End-->
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <div class="nav"><a href="#home">Home</a></div>
-                    <div class="nav"><a href="#service">Services</a></div>
-                    <div class="nav"><a href="#eligibility">Eligibility</a></div>
-                    <div class="nav"><a href="#rules">Rules</a></div>
-                    <div class="nav"><a href="#about">About Us</a></div>
-                    <div class="nav"><a href="#contact">Contact Us</a></div>
-                    <div id="btn-log1" class="btn-log1"><button class="login" type="button">Login</button></div>
-                    <div class="btn-log2 md:absolute md:right-0 md:top-16 hidden">
-                        <div id="btn-log2" >
-                            <div class="nav1"><a href="admin-login.php" target="_blank">Admin Login</a></div>
-                            <div class="nav1"><a href="login.php" target="_blank">User Login</a></div>
-                        </div>  
-                    </div>          
-                </div>
-            </div>
-             </div>
-            <!-- Menubar End-->
-            </div>
-        </div>       
-        <!--=====================
-                Nav end
-        ======================-->  
-        
+     <?php get_nav() ?>   
              
         <!--=====================
              Banner Start
@@ -479,57 +433,5 @@
             Contact  end
      ======================--> 
 
-
-     <!--=====================
-            Footer  Start
-     ======================--> 
-      <footer class="bg-primary mt-auto overflow-hidden">
-         <!-- footer 1st part start -->
-         <div class="w-full py-5">
-           <div class="max-w-5xl xl:max-w-6xl mx-auto flex flex-col justify-center items-center gap-4 p-14 bg-gray-400/25">
-            <div class="flex items-center gap-3">
-               <img class="h-12 border-2 border-white rounded-full" src="../image/logo1.png" alt="">
-               <h1 class="font-bold text-xl md:text-2xl text-Secondary">Sunnah Old Age Home</h1>
-            </div>
-            <p class="text-sm text-white md:text-Secondary md:text-lg text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio repudiandae accusantium nostrum? Reiciendis fuga distinctio obcaecati soluta ipsum dicta nostrum? Voluptatibus aspernatur necessitatibus illo architecto maiores eum sit temporibus inventore.</p>
-            <div class="flex gap-6">
-             <div class="h-5 w-6 ">
-               <a class="footer-icon" href="#"><i class="py-1 px-2 rounded-full border-2 fa-brands fa-facebook-f"></i></a>
-             </div>
-             <div class="h-5 w-6 ">
-               <a class="footer-icon" href="#"><i class="p-1 rounded-full border-2 fa-brands fa-twitter"></i></a>
-             </div>
-             <div class="h-5 w-6 ">
-               <a class="footer-icon" href="#"><i class="p-1 rounded-full border-2 fa-brands fa-linkedin-in"></i></a>
-             </div>
-             <div class="h-5 w-6 ">
-               <a class="footer-icon" href="#"><i class="p-1 rounded-full border-2 fa-brands fa-google"></i></a>
-             </div>
-             <div class="h-5 w-6 ">
-               <a class="footer-icon" href="#"><i class="p-1 rounded-full border-2 fa-brands fa-google-play"></i></a>
-             </div>        
-            </div>
-           </div>
-         </div>
-         <!-- footer 1st part end -->
-
-         <!-- footer Last part start -->
-          <div class="md:text-lg text-primary text-center font-bold p-2 md:py-3 bg-3rd">
-            <h1><span class="text-yellow-500">Copyright @2024</span> Sunnah Old Age Home Management System || Developed by Farhana Bente Islam || 21303195</h1>
-          </div>
-         <!-- footer Last part end -->
-
-
-      </footer>
-    <!--=====================
-            Footer  End
-     ======================-->
-
-    </div>
-
-       <!--=====================
-             Custom JS Start
-       ======================-->  
-   <script src="./script.js"></script>
-</body>
-</html>
+<?php get_footer() ?>
+    
