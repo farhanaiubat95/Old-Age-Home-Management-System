@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.no-scrollbar::-webkit-scrollbar{
+    display:nono;
+}
+.no-scrollbar{
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+}
+.navbar{
+    @apply w-full transition duration-500 ease-out hover:ease-in md:w-auto text-center fixed top-24 left-0 md:static bg-primary md:bg-transparent translate-x-full md:translate-x-0
+}
+.navbar-inner{
+    @apply w-full flex flex-col md:flex-row md:gap-3 md:items-center font-bold text-xl 
+}
+.nav{
+    @apply w-auto hover:scale-105 transition duration-300 ease-out hover:ease-in py-4 md:py-1 px-2 border-b-2  text-Secondary md:text-primary hover:bg-3rd/25 md:hover:bg-primary md:hover:text-Secondary md:border-2 md:border-transparent
+}
+.login{
+    @apply hover:scale-105 transition duration-300 ease-out hover:ease-in w-auto py-4 md:py-1 px-2 md:hover:bg-primary hover:bg-3rd/25 md:border-2 md:hover:border-primary md:border-transparent md:bg-primary md:hover:bg-transparent text-Secondary md:hover:text-primary
+}
+.nav1{
+    @apply hover:scale-105 transition duration-300 ease-out hover:ease-in w-auto py-4 md:py-1 px-2 hover:bg-primary border-t-2 border-t-white md:border-2 md:hover:border-primary md:border-transparent md:bg-primary md:hover:bg-transparent text-Secondary md:hover:text-primary 
+}
+
+#btn-log2{
+    @apply flex flex-col md:flex-row gap-2 justify-between 
+}
+
+.active .btn-log2{
+    @apply block
+}
+
+
+.active1 .banner-card{
+    @apply hidden 
+}
+.active1 .navbar{
+    @apply translate-x-0
+}
+
+.active3 .navbar1{
+    @apply bg-3rd
+}
+
+.active4 .sidebar{
+    @apply -translate-x-0 
+}
+
+
+.banner-card{
+    @apply flex flex-col md:flex-row py-2 md:py-10 md:px-5  md:items-center  bg-primary mx-10 md:mx-0 absolute top-80 sm:left-16  md:static
+}
+
+.banner{
+    background:url(../image/h1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.common-title{
+    @apply flex justify-center items-center font-bold text-4xl xl:text-5xl  text-primary pb-5 md:pb-24
+}
+.service-card{
+    @apply flex gap-3 bg-white transition duration-500 hover:scale-110 md:hover:scale-100
+}
+
+.about-image{
+    background:url(../image/about.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.footer-icon{
+    @apply text-xl text-Secondary  hover:text-2xl transition duration-500 ease-out hover:ease-in
+}
+.contact-image{
+    background:url(../image/contact1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.registration-image{
+    background:url(../image/reg-image.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form-input{
+    @apply bg-transparent border p-2 rounded-md focus:outline-none placeholder:text-white text-Secondary text-sm
+}
+.submit-btn{
+    @apply text-lg text-primary hover:text-Secondary font-bold py-1 rounded-md bg-Secondary text-center border-2 border-transparent hover:border-Secondary hover:bg-transparent
+}
+.login-image{
+    background:url(../image/admin-log.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.sidebarnav{
+    @apply text-sm md:text-lg text-center py-2 border border-transparent hover:bg-gray-400/25 hover:border-gray-700  scale-105
+}
+
+.table-head{
+    @apply py-2 text-white font-semibold text-[17px] tracking-wide
+}
+.table-body{
+    @apply text-center p-2 font-semibold text-[16px] tracking-wide
+}
