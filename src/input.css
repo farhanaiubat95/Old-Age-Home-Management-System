@@ -116,3 +116,10 @@
 .table-body{
     @apply text-center p-2 font-semibold text-[16px] tracking-wide
 }
+
+.search-input{
+ @apply w-96 py-1 px-2 mr-1 rounded-md text-[17px] border-2 border-primary  placeholder:text-[17px] font-bold placeholder:text-black text-primary bg-white/25
+}
+.search-btn{
+    @apply  py-1 px-2 bg-white/25 rounded-md border-2 border-primary 
+}

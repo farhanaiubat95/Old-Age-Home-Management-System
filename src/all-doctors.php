@@ -70,7 +70,7 @@ require_once("connect.php");
                <div class="bg-gray-300 flex-none h-12 md:h-14 flex justify-between items-center px-2 sm:px-5 text-lg border border-gray-400 shadow-md">
                     <div><p class="text-gray-500">Home / Dashboard</p></div>
                     <div>
-                        <a class="p-2 font-bold bg-primary text-white hover:bg-primary/75" href="#"><span><i class="fa-solid fa-users"></i></span>  All Doctors</a>
+                        <a class="p-2 font-bold bg-primary text-white hover:bg-primary/75" href="#"><span><i class="fa-solid fa-plus"></i></span>  Add Doctors</a>
                         <a class="p-2 font-bold bg-red-900 text-white hover:bg-red-950" href="#"><span><i class="fa-solid fa-right-from-bracket"></i></span> Logout</a>
                     </div>
                </div>

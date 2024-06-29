@@ -26,6 +26,7 @@ require_once("connect.php");
 
 
     <div class="flex flex-col md:flex-row w-full grow md:relative">
+     
         <!--==== SideBar Start ===-->
         <aside class="bg-black h-12 md:h-auto flex-none md:w-[240px] text-white md:absolute md:left-0 md:bottom-0 md:top-0 relative">
             <!-- dash menu button start-->
@@ -70,7 +71,7 @@ require_once("connect.php");
                <div class="bg-gray-300 flex-none h-12 md:h-14 flex justify-between items-center px-2 sm:px-5 text-lg border border-gray-400 shadow-md">
                     <div><p class="text-gray-500">Home / Dashboard</p></div>
                     <div>
-                        <a class="p-2 font-bold bg-primary text-white hover:bg-primary/75" href="#"><span><i class="fa-solid fa-users"></i></span>  All Citizens</a>
+                        <a class="p-2 font-bold bg-primary text-white hover:bg-primary/75" href="#"><span><i class="fa-solid fa-plus"></i></span>  Add Citizens</a>
                         <a class="p-2 font-bold bg-red-900 text-white hover:bg-red-950" href="#"><span><i class="fa-solid fa-right-from-bracket"></i></span> Logout</a>
                     </div>
                </div>
@@ -80,7 +81,16 @@ require_once("connect.php");
                <div class="bg-primary/25 grow p-3 border-x border-b border-gray-400 overflow-hidden">
                 <div class="h-[100vh] overflow-scroll no-scrollbar">
                 <!-- Common for all part -->
-                 
+
+              <!-- Search option -->
+                <div class="py-5">
+                    <form action="" method="POST">
+                      <input type="text" class="search-input hidden-print"  name="search" value="" placeholder="search">
+                      <button class="search-btn hidden-print" type="submit"><i class="hover:scale-125 font-bold fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+              <!-- Search option -->
+
                  <!-- this table for lg to upper version Start -->
                  <div class="hidden lg:block">
                     <table class="table-auto w-full">
