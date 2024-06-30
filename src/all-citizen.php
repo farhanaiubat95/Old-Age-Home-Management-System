@@ -82,13 +82,32 @@ require_once("connect.php");
                 <div class="h-[100vh] overflow-scroll no-scrollbar">
                 <!-- Common for all part -->
 
+                <?php
+                         
+                           if(isset($_POST['search']))
+                           {
+                            $filtervalue=$_POST['search'];
+                            $sql="SELECT * FROM tb_userlog WHERE CONCAT(u_id,u_username,u_phonenum,u_email,u_address,u_national) LIKE '%$filtervalue%'";
+
+                           }else
+                           {
+                            $sql="SELECT * FROM tb_userlog";
+                            $filtervalue="";
+                           }
+
+                           $result=mysqli_query($con,$sql);
+                        
+                        
+                        ?>
+                  
               <!-- Search option -->
                 <div class="py-5">
                     <form action="" method="POST">
-                      <input type="text" class="search-input hidden-print"  name="search" value="" placeholder="search">
+                      <input type="text" class="search-input hidden-print"  name="search" value="<?php echo $filtervalue;?>" placeholder="search">
                       <button class="search-btn hidden-print" type="submit"><i class="hover:scale-125 font-bold fa-solid fa-magnifying-glass"></i></button>
                     </form>
                 </div>
+                
               <!-- Search option -->
 
                  <!-- this table for lg to upper version Start -->
@@ -107,17 +126,21 @@ require_once("connect.php");
                             <th class="hidden-print table-head">Manage</th>
                           </tr>
                         </thead>
-    
+                   
+                      <?php
+                        while($rows=mysqli_fetch_object($result))
+                        {
+                      ?>
                         <tbody class="bg-gray-200/25 border-b border-gray-400 hover:bg-gray-400/25 transition duration-200">
                           <tr>
-                            <td class="table-body">10012321</td>
-                            <td class="table-body">farhan90</td>
-                            <td class="table-body">01701232445</td>
-                            <td class="table-body">farjhsaddsfjdkfj@asdlklsdk</td>
-                            <td class="table-body">saudfdfdgflfkhgjgkjhjhkjkllklkl;klk</td>
-                            <td class="table-body">19610493504549</td>
-                            <td class="table-body flex justify-center"><img class="h-20 w-16 border-2 border-black" src="../image/farhana.jpg" alt=""></td>
-                            <td class="table-body">2321493485475895767</td>
+                            <td class="table-body"><?php echo $rows->u_id?></td>
+                            <td class="table-body"><?php echo $rows->u_username?></td>
+                            <td class="table-body"><?php echo $rows->u_phonenum?></td>
+                            <td class="table-body"><?php echo $rows->u_email?></td>
+                            <td class="table-body"><?php echo $rows->u_address?></td>
+                            <td class="table-body"><?php echo $rows->u_national?></td>
+                            <td class="table-body flex justify-center"><img class="h-20 w-20 border-2 border-black" src="<?php echo $rows->u_image?>" alt=""></td>
+                            <td class="table-body"><?php echo $rows->u_registrationdate?></td>
                             <td class="table-body">
                                 <a class="p-1 bg-[#0A6847] hover:bg-[#0A6847]/50 rounded" href="#"><i class='text-white fa-solid fa-eye fa-lg'></i></a>
                                 <a class="p-1 bg-[#DD761C] hover:bg-[#DD761C]/50 rounded" href="#"><i class='text-white px-1 fas fa-edit'></i></a>
@@ -125,7 +148,9 @@ require_once("connect.php");
                             </td>
                             
                           </tr>
-                          
+                        <?php
+                          }
+                        ?>
                         </tbody>
                       </table>
                  </div>
@@ -133,20 +158,48 @@ require_once("connect.php");
 
                   <!-- this table for mobile version done -->
                   <div class="block lg:hidden">
-                    <!-- table-Card start -->
-                       <div class="p-5 bg-gray-300 rounded-md my-2">
+                  
+          
+         <div class="grid ">
+         <?php
+         
+         $con=mysqli_connect("localhost","root","","db_ohms");
+         if(isset($_POST['search']))
+         {
+          $filtervalue=$_POST['search'];
+          $sql="SELECT * FROM tb_userlog WHERE CONCAT(u_id,u_username,u_phonenum,u_email,u_address,u_national) LIKE '%$filtervalue%'";
+
+         }else
+         {
+          $sql="SELECT * FROM tb_userlog";
+          $filtervalue="";
+         }
+
+         $result=mysqli_query($con,$sql);
+         $total= mysqli_num_rows($result);
+      
+      
+      if ($total>0){
+      ?>
+             <?php 
+             while($rows= mysqli_fetch_object($result)) {
+             ?>
+            
+                      <!-- table-Card start -->
+                     
+                      <div class="p-5 bg-gray-300 rounded-md my-2">
                          <div class="flex justify-between py-2">
-                            <div class="font-semibold text-[16px]">
-                              <h1>ID: <span class="font-thin pl-1">10232435</span></h1>
-                              <h1>Username: <span class="font-thin pl-1">farhan90</span></h1>
-                              <h1>Phone: <span class="font-thin pl-1">01701232445</span></h1>
-                              <h1>Email: <span class="font-thin pl-1">farjhsaddsfjdkfj@asdlklsdk</span></h1>
-                              <h1>Address: <span class="font-thin pl-1">saudfdfdgflfkhgjgkjhjhkjkllklkl;klk</span></h1>
-                              <h1>NID: <span class="font-thin pl-1">19610493504549</span></h1>
-                              <h1>Registration Date: <span class="font-thin pl-1">2321493485475895767</span></h1>
+                            <div class="font-semibold text-[16px]">              
+                              <h1>ID: <span class="font-thin pl-1"><?php echo $rows->u_id ?></span></h1>
+                              <h1>Username: <span class="font-thin pl-1"><?php echo $rows->u_username ?></span></h1>
+                              <h1>Phone: <span class="font-thin pl-1"><?php echo $rows->u_phonenum ?></span></h1>
+                              <h1>Email: <span class="font-thin pl-1"><?php echo $rows->u_email ?></span></h1>
+                              <h1>Address: <span class="font-thin pl-1"><?php echo $rows->u_address ?></span></h1>
+                              <h1>NID: <span class="font-thin pl-1"><?php echo $rows->u_national ?></span></h1>
+                              <h1>Registration Date: <span class="font-thin pl-1"><?php echo $rows->u_registrationdate ?></span></h1>
                             </div>
                             <div>
-                                <img class="h-32 w-28 border-2 border-black" src="../image/farhana.jpg" alt="">
+                                <img class="h-32 w-28 sm:h-44 sm:w-44 border-2 border-black" src="<?php echo $rows->u_image ?>" alt="">
                             </div>
                          </div>
                          <div class="flex items-center gap-1">
@@ -155,32 +208,22 @@ require_once("connect.php");
                             <a class="p-1 bg-[#3572EF] hover:bg-[#3572EF]/50 rounded" href="#"><i class='text-white px-1 fa-solid fa-trash'></i></a>
                          </div>
                        </div>
+                       <?php
+             }
+            
+           ?>
+                    <?php
+             }
+            
+           ?>
+
+       
                     <!-- table-Card start -->
 
-                    <!-- table-Card1 start -->
-                    <div class="p-5 bg-gray-300 rounded-md my-2">
-                        <div class="flex justify-between py-2">
-                           <div class="font-semibold text-[15px]">
-                             <h1>ID: <span class="font-thin pl-1">10232435</span></h1>
-                             <h1>Username: <span class="font-thin pl-1">farhan90</span></h1>
-                             <h1>Phone: <span class="font-thin pl-1">01701232445</span></h1>
-                             <h1>Email: <span class="font-thin pl-1">farjhsaddsfjdkfj@asdlklsdk</span></h1>
-                             <h1>Address: <span class="font-thin pl-1">saudfdfdgflfkhgjgkjhjhkjkllklkl;klk</span></h1>
-                             <h1>NID: <span class="font-thin pl-1">19610493504549</span></h1>
-                             <h1>Registration Date: <span class="font-thin pl-1">2321493485475895767</span></h1>
-                           </div>
-                           <div>
-                               <img class="h-32 w-28 border-2 border-black" src="../image/farhana.jpg" alt="">
-                           </div>
-                        </div>
-                        <div class="flex items-center gap-1">
-                           <a class="p-1 bg-[#0A6847] hover:bg-[#0A6847]/50 rounded" href="#"><i class='text-white fa-solid fa-eye fa-lg'></i></a> 
-                           <a class="p-1 bg-[#DD761C] hover:bg-[#DD761C]/50 rounded" href="#"><i class="text-white px-1 fas fa-edit"></i></a>
-                           <a class="p-1 bg-[#3572EF] hover:bg-[#3572EF]/50 rounded" href="#"><i class='text-white px-1 fa-solid fa-trash'></i></a>
-                        </div>
-                      </div>
-                   <!-- table-Card1 start -->
-                  </div>
+                   </div> 
+                 
+                  
+                 </div>
                   <!-- this table for mobile version done -->
 
 
