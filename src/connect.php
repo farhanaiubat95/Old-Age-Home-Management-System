@@ -7,4 +7,3 @@ if(!$con)
   echo"Not connected";
 }
 
-?>

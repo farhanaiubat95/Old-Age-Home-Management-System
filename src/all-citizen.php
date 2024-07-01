@@ -1,7 +1,4 @@
-<?php
-require_once("connect.php");
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +15,7 @@ require_once("connect.php");
     <!--== Header Start ==-->
     <header class="header bg-primary flex-none h-20 flex justify-center items-center ">
        <div class="flex justify-center items-center gap-3 text-4th text-2xl font-bold capitalize scale-105 shadow-lg">
-          <img class="h-14 rounded-full border-2 border-Secondary scale-105 shadow-xl" src="../image/logo1.png" alt="">
+          <img class="h-14 rounded-full border-2 border-Secondary scale-105 shadow-xl" src="./image/logo1.png" alt="">
           <p>Sunnah Old Age Home</p>
        </div>
     </header>
@@ -36,7 +33,7 @@ require_once("connect.php");
             <div class="sidebar w-[240px] bg-black absolute top-12 left-0 transition duration-500 ease-out  -translate-x-64 md:-translate-x-0 md:static ">
              <!-- sidebar Header Start-->
               <div class="flex flex-col justify-center gap-1 items-center py-7 border-b border-b-gray-300">
-                <img class="h-16 w-16 md:h-20 md:w-20 rounded-full border-2 block" src="../image/Arif.jpg" alt="">
+                <img class="h-16 w-16 md:h-20 md:w-20 rounded-full border-2 block" src="./image/Arif.jpg" alt="">
                 <h1 class="md:text-lg mt-3">Farhana Bente Islam</h1>
                 <span class="text-sm"><i class="text-[#41B06E] text-sm fa fa-circle"></i> Online</span>
               </div>
@@ -71,8 +68,8 @@ require_once("connect.php");
                <div class="bg-gray-300 flex-none h-12 md:h-14 flex justify-between items-center px-2 sm:px-5 text-lg border border-gray-400 shadow-md">
                     <div><p class="text-gray-500">Home / Dashboard</p></div>
                     <div>
-                        <a class="p-2 font-bold bg-primary text-white hover:bg-primary/75" href="#"><span><i class="fa-solid fa-plus"></i></span>  Add Citizens</a>
-                        <a class="p-2 font-bold bg-red-900 text-white hover:bg-red-950" href="#"><span><i class="fa-solid fa-right-from-bracket"></i></span> Logout</a>
+                        <a class="p-2 font-bold bg-primary text-white hover:bg-primary/75" href="add-citizen.php"><span><i class="fa-solid fa-plus"></i></span>  Add Citizens</a>
+                        <a class="p-2 font-bold bg-red-900 text-white hover:bg-red-950" href="logout.php"><span><i class="fa-solid fa-right-from-bracket"></i></span> Logout</a>
                     </div>
                </div>
             <!-- Panel Header End-->
@@ -82,36 +79,35 @@ require_once("connect.php");
                 <div class="h-[100vh] overflow-scroll no-scrollbar">
                 <!-- Common for all part -->
 
+                 <!-- this table for lg to upper version Start -->
+                 <div class="hidden lg:block">
+                  
                 <?php
-                         
+                        require_once("connect.php"); 
                            if(isset($_POST['search']))
                            {
-                            $filtervalue=$_POST['search'];
+                            $filtervalue=$_POST['query'];
                             $sql="SELECT * FROM tb_userlog WHERE CONCAT(u_id,u_username,u_phonenum,u_email,u_address,u_national) LIKE '%$filtervalue%'";
-
+                            $result=mysqli_query($con,$sql);
                            }else
                            {
                             $sql="SELECT * FROM tb_userlog";
                             $filtervalue="";
-                           }
-
-                           $result=mysqli_query($con,$sql);
-                        
-                        
+                            $result=mysqli_query($con,$sql);
+                           }  
                         ?>
                   
               <!-- Search option -->
                 <div class="py-5">
-                    <form action="" method="POST">
-                      <input type="text" class="search-input hidden-print"  name="search" value="<?php echo $filtervalue;?>" placeholder="search">
-                      <button class="search-btn hidden-print" type="submit"><i class="hover:scale-125 font-bold fa-solid fa-magnifying-glass"></i></button>
+                    <form action="" method="POST" enctype="multipart/data-form">
+                      <input type="text" class="search-input hidden-print"  name="query" value="<?php echo $filtervalue;?>" placeholder="search">
+                      <button class="search-btn hidden-print" type="submit" name="search"><i class="hover:scale-125 font-bold fa-solid fa-magnifying-glass"></i></button>
                     </form>
                 </div>
                 
               <!-- Search option -->
 
-                 <!-- this table for lg to upper version Start -->
-                 <div class="hidden lg:block">
+              <!-- Table start -->
                     <table class="table-auto w-full">
                         <thead class="bg-7th shadow-lg shadow-black/50">
                           <tr>
@@ -126,7 +122,7 @@ require_once("connect.php");
                             <th class="hidden-print table-head">Manage</th>
                           </tr>
                         </thead>
-                   
+                  
                       <?php
                         while($rows=mysqli_fetch_object($result))
                         {
@@ -153,6 +149,7 @@ require_once("connect.php");
                         ?>
                         </tbody>
                       </table>
+                      <!-- Table end -->
                  </div>
                   <!-- this table for lg to upper version done -->
 
@@ -160,27 +157,31 @@ require_once("connect.php");
                   <div class="block lg:hidden">
                   
           
-         <div class="grid ">
-         <?php
-         
-         $con=mysqli_connect("localhost","root","","db_ohms");
-         if(isset($_POST['search']))
-         {
-          $filtervalue=$_POST['search'];
-          $sql="SELECT * FROM tb_userlog WHERE CONCAT(u_id,u_username,u_phonenum,u_email,u_address,u_national) LIKE '%$filtervalue%'";
-
-         }else
-         {
-          $sql="SELECT * FROM tb_userlog";
-          $filtervalue="";
-         }
-
-         $result=mysqli_query($con,$sql);
-         $total= mysqli_num_rows($result);
-      
-      
-      if ($total>0){
-      ?>
+                  <?php
+                        require_once("connect.php"); 
+                           if(isset($_POST['search']))
+                           {
+                            $filtervalue=$_POST['query'];
+                            $sql="SELECT * FROM tb_userlog WHERE CONCAT(u_id,u_username,u_phonenum,u_email,u_address,u_national) LIKE '%$filtervalue%'";
+                            $result=mysqli_query($con,$sql);
+                           }else
+                           {
+                            $sql="SELECT * FROM tb_userlog";
+                            $filtervalue="";
+                            $result=mysqli_query($con,$sql);
+                           }  
+                        ?>
+                  
+              <!-- Search option -->
+                <div class="py-5">
+                    <form action="" method="POST" enctype="multipart/data-form">
+                      <input type="text" class="search-input hidden-print"  name="query" value="<?php echo $filtervalue;?>" placeholder="search">
+                      <button class="search-btn hidden-print" type="submit" name="search"><i class="hover:scale-125 font-bold fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+                
+              <!-- Search option -->
+         <div class="grid ">   
              <?php 
              while($rows= mysqli_fetch_object($result)) {
              ?>
@@ -208,14 +209,11 @@ require_once("connect.php");
                             <a class="p-1 bg-[#3572EF] hover:bg-[#3572EF]/50 rounded" href="#"><i class='text-white px-1 fa-solid fa-trash'></i></a>
                          </div>
                        </div>
-                       <?php
+                      <?php
              }
             
            ?>
-                    <?php
-             }
-            
-           ?>
+    
 
        
                     <!-- table-Card start -->

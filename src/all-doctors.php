@@ -18,7 +18,7 @@ require_once("connect.php");
     <!--== Header Start ==-->
     <header class="header bg-primary flex-none h-20 flex justify-center items-center ">
        <div class="flex justify-center items-center gap-3 text-4th text-2xl font-bold capitalize scale-105 shadow-lg">
-          <img class="h-14 rounded-full border-2 border-Secondary scale-105 shadow-xl" src="../image/logo1.png" alt="">
+          <img class="h-14 rounded-full border-2 border-Secondary scale-105 shadow-xl" src="./image/logo1.png" alt="">
           <p>Sunnah Old Age Home</p>
        </div>
     </header>
@@ -35,7 +35,7 @@ require_once("connect.php");
             <div class="sidebar w-[240px] bg-black absolute top-12 left-0 transition duration-500 ease-out  -translate-x-64 md:-translate-x-0 md:static ">
              <!-- sidebar Header Start-->
               <div class="flex flex-col justify-center gap-1 items-center py-7 border-b border-b-gray-300">
-                <img class="h-16 w-16 md:h-20 md:w-20 rounded-full border-2 block" src="../image/Arif.jpg" alt="">
+                <img class="h-16 w-16 md:h-20 md:w-20 rounded-full border-2 block" src="./image/Arif.jpg" alt="">
                 <h1 class="md:text-lg mt-3">Farhana Bente Islam</h1>
                 <span class="text-sm"><i class="text-[#41B06E] text-sm fa fa-circle"></i> Online</span>
               </div>
@@ -70,8 +70,8 @@ require_once("connect.php");
                <div class="bg-gray-300 flex-none h-12 md:h-14 flex justify-between items-center px-2 sm:px-5 text-lg border border-gray-400 shadow-md">
                     <div><p class="text-gray-500">Home / Dashboard</p></div>
                     <div>
-                        <a class="p-2 font-bold bg-primary text-white hover:bg-primary/75" href="#"><span><i class="fa-solid fa-plus"></i></span>  Add Doctors</a>
-                        <a class="p-2 font-bold bg-red-900 text-white hover:bg-red-950" href="#"><span><i class="fa-solid fa-right-from-bracket"></i></span> Logout</a>
+                        <a class="p-2 font-bold bg-primary text-white hover:bg-primary/75" href="add-doctor.php"><span><i class="fa-solid fa-plus"></i></span>  Add Doctors</a>
+                        <a class="p-2 font-bold bg-red-900 text-white hover:bg-red-950" href="logout.php"><span><i class="fa-solid fa-right-from-bracket"></i></span> Logout</a>
                     </div>
                </div>
             <!-- Panel Header End-->
