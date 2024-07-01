@@ -23,7 +23,7 @@ require_once("connect.php");
             <div class="max-w-5xl  mx-auto flex justify-between items-center py-2 px-5 sm:px-10 xl:px-0">
             <!-- Logo Start-->
               <div>
-                <img class="max-h-20" src="../image/logo1.png" alt="">              
+                <img class="max-h-20" src="./image/logo1.png" alt="">              
             </div>
             <!-- Logo End-->
 
@@ -78,37 +78,37 @@ require_once("connect.php");
                         <!-- div1 -->
                     <div class="md:w-1/2 flex flex-col gap-4">
                         <div class="flex flex-col"> 
-                            <label class="font-bold block text-Secondary text-lg pb-1">User Name :</label> 
+                            <label class="form-lebel">User Name :</label> 
                             <input class="form-input" type="text" placeholder="@alex95" name="user">
                         </div>
         
                         <div class="flex flex-col"> 
-                            <label class="font-bold block text-Secondary text-lg pb-1">Full Name :</label> 
+                            <label class="form-lebel">Full Name :</label> 
                             <input class="form-input" type="text" placeholder="give your full name" name="fullname">
                         </div>
         
                         <div class="flex flex-col"> 
-                            <label class="font-bold block text-Secondary text-lg pb-1">Phone Number :</label> 
+                            <label class="form-lebel">Phone Number :</label> 
                             <input class="form-input" type="number" placeholder="013XXXXXXXX" name="phone">
                         </div>
         
                         <div class="flex flex-col"> 
-                            <label class="font-bold block text-Secondary text-lg pb-1">Email Address :</label> 
+                            <label class="form-lebel">Email Address :</label> 
                             <input class="form-input" type="email" placeholder="alex@gmail.com" name="email">
                         </div>
         
                         <div class="flex flex-col"> 
-                            <label class="font-bold block text-Secondary text-lg pb-1">Date of Birth :</label> 
+                            <label class="form-lebel">Date of Birth :</label> 
                             <input class="form-input" type="date" name="date">
                         </div>
         
                         <div class="flex flex-col"> 
-                            <label class="font-bold block text-Secondary text-lg pb-1">National ID : <span class="text-sm text-white">(if you have, then give carefully)</span></label> 
+                            <label class="form-lebel">National ID : <span class="text-sm text-white">(if you have, then give carefully)</span></label> 
                             <input class="form-input" type="number" placeholder="011*********" name="nid">
                         </div>
   
                         <div class="flex flex-col"> 
-                          <label class="font-bold block text-Secondary text-lg pb-1">Citizenship:</label> 
+                          <label class="form-lebel">Citizenship:</label> 
                           <select class="form-input" name="citizenship" id="citizenship">
                               <option value="none" selected disabled hidden>Select</option>
                               <option value="Bangladeshi">Bangladeshi</option>
@@ -116,12 +116,12 @@ require_once("connect.php");
                       </div>                   
   
                       <div class="flex flex-col"> 
-                          <label class="font-bold block text-Secondary text-lg pb-1">Uploade Image :</label> 
+                          <label class="form-lebel">Uploade Image :</label> 
                           <input class="form-input" type="file" name="image">
                       </div>
   
                       <div class="flex flex-col"> 
-                          <label class="font-bold block text-Secondary text-lg pb-1">Permanent address:</label> 
+                          <label class="form-lebel">Permanent address:</label> 
                           <textarea  rows="1"  class="form-input" type="textarea" placeholder="give correct address" name="address"></textarea>
                       </div>
                          
@@ -133,7 +133,7 @@ require_once("connect.php");
   
                           <div class="flex justify-between gap-5">
                               <div class="flex flex-col w-1/2"> 
-                                  <label class="font-bold block text-Secondary text-lg pb-1">Gendar :</label> 
+                                  <label class="form-lebel">Gendar :</label> 
                                   <select class="form-input" name="gender" id="gender">
                                       <option value="none" selected disabled hidden>Select</option>
                                       <option value="Male">Male</option>
@@ -143,7 +143,7 @@ require_once("connect.php");
                               </div>
       
                               <div class="flex flex-col  w-1/2"> 
-                                  <label class="font-bold block text-Secondary text-lg pb-1">Marital Status:</label> 
+                                  <label class="form-lebel">Marital Status:</label> 
                                   <select class="form-input" name="marital" id="marital">
                                       <option value="Single">Single</option>
                                       <option value="Married">Married</option>
@@ -154,12 +154,12 @@ require_once("connect.php");
                           </div>
   
                           <div class="flex flex-col"> 
-                              <label class="font-bold block text-Secondary text-lg pb-1">Child :</label> 
+                              <label class="form-lebel">Child :</label> 
                               <input class="form-input" type="number" placeholder=" 0" name="childNum">
                           </div>
   
                           <div class="flex flex-col"> 
-                              <label class="font-bold block text-Secondary text-lg pb-1">Password :</label> 
+                              <label class="form-lebel">Password :</label> 
                               <input class="form-input" type="text" placeholder=" at least 6 character" name="pass">
                           </div>
   
@@ -167,13 +167,13 @@ require_once("connect.php");
                           <div class="bg-Secondary text-center text-primary p-1 text-lg font-bold mt-8 mb-3"><h1>Power of Attorney/ Gurdian/ Conservators:</h1></div>
   
                           <div class="flex flex-col"> 
-                              <label class="font-bold block text-Secondary text-lg pb-1">Gurdian Name :</label> 
+                              <label class="form-lebel">Gurdian Name :</label> 
                               <input class="form-input" type="text" placeholder=" full name" name="ug_name">
                           </div>
   
                           <div class="flex justify-between gap-5">
                               <div class="w-1/2 flex flex-col"> 
-                                  <label class="font-bold block text-Secondary text-lg pb-1">Relation :</label> 
+                                  <label class="form-lebel">Relation :</label> 
                                   <select class="form-input" name="relationn" id="marital">
                                       <option value="none" selected disabled hidden>Select</option>
                                       <option value="Father">Father</option>
@@ -188,23 +188,23 @@ require_once("connect.php");
                               </div>
       
                               <div class="w-1/2 flex flex-col"> 
-                                  <label class="font-bold block text-Secondary text-lg pb-1">Phone Number :</label> 
+                                  <label class="form-lebel">Phone Number :</label> 
                                   <input class="form-input" type="number" placeholder=" 012*********" name="ug_num">
                               </div>
                           </div>
   
                           <div class="flex flex-col"> 
-                              <label class="font-bold block text-Secondary text-lg pb-1">Email id :</label> 
+                              <label class="form-lebel">Email id :</label> 
                               <input class="form-input" type="email" placeholder=" alex@gmail.com" name="ug_email">
                           </div>
   
                           <div class="flex flex-col"> 
-                              <label class="font-bold block text-Secondary text-lg pb-1">Address :</label> 
+                              <label class="form-lebel">Address :</label> 
                               <textarea class="form-input" id="textarea1" placeholder=" full address" rows="1" name="ug_add"></textarea>
                           </div>
   
                           <div class="flex flex-col"> 
-                              <label class="font-bold block text-Secondary text-lg pb-1">Comments :</label> 
+                              <label class="form-lebel">Comments :</label> 
                               <textarea class="form-input" id="textarea1" placeholder=" write your opinion" rows="1" name="ug_comments"></textarea>
         
                           </div>

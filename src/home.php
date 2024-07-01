@@ -24,7 +24,7 @@ require_once("connect.php");
             <div class="max-w-5xl  mx-auto flex justify-between items-center py-2 px-5 sm:px-10 xl:px-0">
             <!-- Logo Start-->
               <div>
-                <img class="max-h-20" src="../image/logo1.png" alt="">              
+                <img class="max-h-20" src="./image/logo1.png" alt="">              
             </div>
             <!-- Logo End-->
 
@@ -140,7 +140,7 @@ require_once("connect.php");
             <!-- s1 start -->
             <div class="service-card">
                <div>
-                  <img class="scale-110 shadow-md border-2 border-primary" src="../image/p4.jpg" alt="">
+                  <img class="scale-110 shadow-md border-2 border-primary" src="./image/p4.jpg" alt="">
                </div>
                <div class="pl-3 pr-4 py-2">
                   <h1 class="text-xl font-bold text-primary">Accommodation</h1>

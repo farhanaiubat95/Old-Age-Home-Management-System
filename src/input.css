@@ -56,7 +56,7 @@
 }
 
 .banner{
-    background:url(../image/h1.jpg);
+    background:url(./image/h1.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -95,6 +95,9 @@
 .form-input{
     @apply bg-transparent border p-2 rounded-md focus:outline-none placeholder:text-white text-Secondary text-sm
 }
+.form-lebel{
+    @apply font-bold block text-Secondary text-lg pb-1
+}
 .submit-btn{
     @apply text-lg text-primary hover:text-Secondary font-bold py-1 rounded-md bg-Secondary text-center border-2 border-transparent hover:border-Secondary hover:bg-transparent
 }
@@ -122,4 +125,12 @@
 }
 .search-btn{
     @apply  py-1 px-2 bg-white/25 rounded-md border-2 border-primary 
+}
+
+.add-form-lebel{
+    @apply font-bold block text-primary text-lg pb-1
+}
+
+.add-form-input{
+    @apply bg-transparent hover:scale-y-105 shadow hover:shadow-gray-500 border border-primary p-2 rounded-md focus:outline-none placeholder:text-7th text-primary text-sm font-semibold
 }

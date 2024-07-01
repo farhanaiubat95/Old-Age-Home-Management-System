@@ -22,7 +22,7 @@ require_once("connect.php");
             <div class="max-w-5xl  mx-auto flex justify-between items-center py-2 px-5 sm:px-10 xl:px-0">
             <!-- Logo Start-->
               <div>
-                <img class="max-h-20" src="../image/logo1.png" alt="">              
+                <img class="max-h-20" src="./image/logo1.png" alt="">              
             </div>
             <!-- Logo End-->
 
