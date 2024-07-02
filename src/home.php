@@ -135,8 +135,9 @@ require_once("connect.php");
         <!-- Service Body Start-->
         <div class="bg-3rd/50 p-4 md:p-3 lg:p-7 mb-12 md:mb-10 transition duration-500 md:hover:scale-105  xl:scale-110 xl:hover:scale-125 shadow-xl">
            <div class="max-h-[220px] sm:max-h-[420px] md:max-h-full lg:max-h-[360px] p-4 overflow-y-scroll no-scrollbar flex flex-col gap-3 md:gap-4 lg:gap-7">
-            <!-- *service row1 Start* -->
-           <div class="flex flex-col md:flex-row gap-7">
+           
+           <!-- *service row1 Start* -->
+            <div class="flex flex-col md:flex-row gap-7">
             <!-- s1 start -->
             <div class="service-card">
                <div>
@@ -153,10 +154,10 @@ require_once("connect.php");
              <!-- s2 start -->
              <div class="service-card">
               <div>
-                 <img class="scale-110 shadow-md border-2 border-primary" src="../image/p5.png" alt="">
+                 <img class="scale-110 shadow-md border-2 border-primary" src="./image/p5.png" alt="">
               </div>
               <div class="pl-3 pr-4 py-2">
-                 <h1 class="text-xl font-bold text-primary">Medical Check-Up</h1>
+                 <h1 class="text-xl font-bold text-primary">Medical checkup</h1>
                  <p class="text-sm text-justify py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, nulla nostrum neque minima dolor at omnis blanditiis. Natus, repudiandae debitis!</p>
                  <a class="font-bold text-sm p-1 bg-primary hover:bg-transparent text-Secondary hover:text-primary border border-primary" href="">Learn More ></a>
               </div>
@@ -164,13 +165,14 @@ require_once("connect.php");
            <!-- s2 End --> 
          </div>
            <!-- *service row1 End* -->
+           
 
            <!-- *service row2 Start* -->
            <div class="flex flex-col md:flex-row gap-7">
             <!-- s1 start -->
             <div class="service-card">
                <div>
-                  <img class="scale-110 shadow-md border-2 border-primary" src="../image/p3.png" alt="">
+                  <img class="scale-110 shadow-md border-2 border-primary" src="./image/p3.png" alt="">
                </div>
                <div class="pl-3 pr-4 py-2 ">
                   <h1 class="text-xl font-bold text-primary">Interaction Centre</h1>
@@ -183,7 +185,7 @@ require_once("connect.php");
              <!-- s2 start -->
              <div class="service-card">
               <div>
-                 <img class="scale-110 shadow-md border-2 border-primary" src="../image/p1.jpg" alt="">
+                 <img class="scale-110 shadow-md border-2 border-primary" src="./image/p1.jpg" alt="">
               </div>
               <div class="pl-3 pr-4 py-2">
                  <h1 class="text-xl font-bold text-primary">Nursing & Personal Care</h1>
@@ -200,7 +202,7 @@ require_once("connect.php");
             <!-- s1 start -->
             <div class="service-card">
                <div>
-                  <img class="scale-110 shadow-md border-2 border-primary" src="../image/p2.jpg" alt="">
+                  <img class="scale-110 shadow-md border-2 border-primary" src="./image/p2.jpg" alt="">
                </div>
                <div class="pl-3 pr-4 py-2">
                   <h1 class="text-xl font-bold text-primary">Counseling</h1>
@@ -213,7 +215,7 @@ require_once("connect.php");
              <!-- s2 start -->
              <div class="service-card">
               <div>
-                 <img class="scale-110 shadow-md border-2 border-primary" src="../image/p6.jpg" alt="">
+                 <img class="scale-110 shadow-md border-2 border-primary" src="./image/p6.jpg" alt="">
               </div>
               <div class="pl-3 pr-4 py-2">
                  <h1 class="text-xl font-bold text-primary">Monthly Tour</h1>
@@ -448,30 +450,62 @@ require_once("connect.php");
                   </div>
    
                   <!-- Contact form Start-->
+
                   <div class="md:w-1/2 flex flex-col p-4 rounded-md bg-black/75">   
                      <div class="px-5 my-5">
-                       <form action="#" class="flex flex-col gap-4">
+                       <form action="#" method="POST" class="flex flex-col gap-4">
                          <div class="flex flex-col"> 
                             <label class="font-bold block text-Secondary text-lg pb-2">Full Name :</label> 
-                            <input class="form-input" type="text" placeholder="give your full name">
+                            <input class="form-input" type="text" placeholder="give your full name" name="pname">
                          </div>
                          <div class="flex flex-col"> 
                            <label class="font-bold block text-Secondary text-lg pb-2">Phone Number :</label> 
-                           <input class="form-input" type="number" placeholder="01XXXXXXXXXX">
+                           <input class="form-input" type="number" placeholder="01XXXXXXXXXX" name="pmobile">
                         </div>
                         <div class="flex flex-col"> 
                            <label class="font-bold block text-Secondary text-lg pb-2">Email Address :</label> 
-                           <input class="form-input" type="email" placeholder="alex@gmail.com">
+                           <input class="form-input" type="email" placeholder="alex@gmail.com" name="pemail" Required>
                         </div>
                         <div class="flex flex-col"> 
                            <label class="font-bold block text-Secondary text-lg pb-2">Message :</label> 
-                           <textarea  rows="1"  class="form-input" type="textarea" placeholder="write comment"></textarea>
+                           <textarea  rows="1"  class="form-input" type="textarea" placeholder="write comment" name="ptext"></textarea>
                         </div>
                         
                         <div class="submit-btn">
-                           <button class="cursor-pointer">SEND</button>
+                           <button class="cursor-pointer" name="consubmit">SEND</button>
                         </div>
                        </form>
+                       <?php 
+            if(isset($_POST['consubmit']))
+            {
+            $pname=$_POST['pname'];
+            $pmobile=$_POST['pmobile'];
+            $pemail=$_POST['pemail'];
+            $ptext=$_POST['ptext'];
+
+            $sql="INSERT INTO `tb_contact`(`p_id`, `pname`, `pmobile`, `pemail`, `pmessege`, `pdate`) VALUES ('null','$pname','$pmobile','$pemail','$ptext',current_timestamp)";
+            $result= mysqli_query($con,$sql);
+            if($result)
+            {
+               echo"
+            <script>
+            alert('Your message is stored, Thanks..'); 
+            window.location.href='home.php';
+            </script>
+            ";
+            }
+            else{
+            echo"
+            <script>
+            alert('Give the correct information...'); 
+            window.location.href='home.php';
+            </script>
+            ";
+            }
+            }
+
+            
+         ?>
                      </div>
                   </div>
                   <!-- Contact form Start-->
