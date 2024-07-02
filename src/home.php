@@ -14,13 +14,13 @@ require_once("connect.php");
     <title>Home || Sunnah</title>
 </head>
 <body>
-     <!-- 0E606E -->
-        <div class="body w-screen min-h-screen bg-5th font-roboto ">
+   
+   <div class="body w-screen min-h-screen bg-5th font-roboto ">
 
-       <!--=====================
-               Nav Start
-        ======================-->  
-        <div class="navbar1 w-full max-h-[100px] bg-Secondary scale-105 md:bg-black/25 shadow-md md:shadow-xl shadow-3rd fixed top-0 left-0 z-50">
+    <!--=====================
+          Nav Start
+    ======================-->  
+    <div class="navbar1 w-full max-h-[100px] bg-Secondary scale-105 md:bg-black/25 shadow-md md:shadow-xl shadow-3rd fixed top-0 left-0 z-50">
             <div class="max-w-5xl  mx-auto flex justify-between items-center py-2 px-5 sm:px-10 xl:px-0">
             <!-- Logo Start-->
               <div>
@@ -55,15 +55,15 @@ require_once("connect.php");
              </div>
             <!-- Menubar End-->
             </div>
-        </div>       
-        <!--=====================
-                Nav end
-        ======================-->   
+    </div>       
+    <!--=====================
+           Nav end
+    ======================-->   
              
-        <!--=====================
-             Banner Start
-        ======================-->  
-        <div id="home" class="w-full banner-full ">
+    <!--=====================
+          Banner Start
+    ======================-->  
+    <div id="home" class="w-full banner-full ">
            <div class="banner">
              <div class="w-full mt-24 lg:mt-0 lg:max-w-5xl  lg:mx-auto lg:pt-48 relative">
                 <!-- Banner Intro Start-->
@@ -115,14 +115,14 @@ require_once("connect.php");
                 <!-- Banner Card End -->
              </div>
            </div>
-        </div>
-        <!--=====================
-             Banner End
-        ======================--> 
+    </div>
+    <!--=====================
+          Banner End
+    ======================--> 
   
         
-        <!--=====================
-             Service Start
+     <!--=====================
+          Service Start
      ======================--> 
      <div id="service" class="service w-full pt-56 pb-16 px-5  lg:px-10 md:py-28 overflow-hidden">
        <div class="w-full lg:max-w-5xl lg:mx-auto">
@@ -248,7 +248,7 @@ require_once("connect.php");
      <!-- ele body start-->
      <div class="max-w-5xl mx-auto  w-full mb-24 px-7 py-5 border-2 border-primary flex flex-col md:flex-row gap-2 xl:scale-125 md:shadow-2xl md:shadow-primary">
       <div >
-         <img class="w-full md:w-auto md:h-72  border-2 border-Secondary " src="../image/e1.jpg" alt="">
+         <img class="w-full md:w-auto md:h-72  border-2 border-Secondary " src="./image/e1.jpg" alt="">
       </div>
       
       <div class="flex flex-col gap-4">
@@ -296,18 +296,18 @@ require_once("connect.php");
             </div>
 
             <div class="flex justify-center col-start-6 col-end-8 md:col-start-4 md:col-end-5">
-               <img class="h-20 rounded-full border-2 border-primary" src="../image/r3.png" alt="">
+               <img class="h-20 rounded-full border-2 border-primary" src="./image/r3.png" alt="">
             </div>
          </div>
          <div class="flex justify-center">
-            <img class="h-16" src="../image/line1.png" alt="">
+            <img class="h-16" src="./image/line1.png" alt="">
          </div>
          <!-- r1 End -->
 
          <!-- r2 Start -->
          <div class="grid grid-cols-7  gap-2 w-full ">
             <div class="flex justify-center col-start-1 col-end-3 md:col-start-4 md:col-end-5">
-               <img class="h-20 rounded-full border-2 border-primary" src="../image/r1.jpg" alt="">
+               <img class="h-20 rounded-full border-2 border-primary" src="./image/r1.jpg" alt="">
             </div>
 
             <div class="flex  items-center py-5 font-bold text-xl col-start-3 col-end-8 md:col-span-3 text-primary">
@@ -317,7 +317,7 @@ require_once("connect.php");
          
          </div>
          <div class="flex justify-center">
-            <img class="h-16" src="../image/line1.png" alt="">
+            <img class="h-16" src="./image/line1.png" alt="">
          </div>
          <!-- r2 End -->
 
@@ -328,18 +328,18 @@ require_once("connect.php");
             </div>
 
             <div class="flex justify-center col-start-6 col-end-8 md:col-start-4 md:col-end-5">
-               <img class="h-20 rounded-full border-2 border-primary" src="../image/r2.jpg" alt="">
+               <img class="h-20 rounded-full border-2 border-primary" src="./image/r2.jpg" alt="">
             </div>
          </div>
          <div class="flex justify-center">
-            <img class="h-16" src="../image/line1.png" alt="">
+            <img class="h-16" src="./image/line1.png" alt="">
          </div>
          <!-- r3 End -->
 
          <!-- r4 Start -->
          <div class="grid grid-cols-7  gap-2 w-full ">
             <div class="flex justify-center col-start-1 col-end-3 md:col-start-4 md:col-end-5">
-               <img class="h-20 rounded-full border-2 border-primary" src="../image/r4.png" alt="">
+               <img class="h-20 rounded-full border-2 border-primary" src="./image/r4.png" alt="">
             </div>
 
             <div class="flex  items-center pr-3  font-bold text-xl col-start-3 col-end-8 md:col-span-3 text-primary">
@@ -365,7 +365,7 @@ require_once("connect.php");
            <!-- r1 Start -->
             <div class="flex gap-2">
                <div class="px-5 py-3 bg-primary">
-                  <img class="h-16 w-16" src="../image/watch.jpg" alt="">
+                  <img class="h-16 w-16" src="./image/watch.jpg" alt="">
                </div>
                <div class="bg-gray-300 flex items-center p-3">
                  <p class="font-bold text-primary ">Visiting hours for the guest will be from 10am to 6pm , Only identified guests are allowed inside the home.</p>
@@ -381,7 +381,7 @@ require_once("connect.php");
                </div>
 
                <div class="px-5 py-3 bg-primary">
-                  <img class="h-16 w-16 bg-white rounded-full" src="../image/not-visitor.png" alt="">
+                  <img class="h-16 w-16 bg-white rounded-full" src="./image/not-visitor.png" alt="">
                </div>
             </div>
             <!-- r2 End -->

@@ -89,11 +89,15 @@
                             $filtervalue=$_POST['query'];
                             $sql="SELECT * FROM tb_userlog WHERE CONCAT(u_id,u_username,u_phonenum,u_email,u_address,u_national) LIKE '%$filtervalue%'";
                             $result=mysqli_query($con,$sql);
+                            $total=mysqli_num_rows($result);
+
                            }else
                            {
                             $sql="SELECT * FROM tb_userlog";
                             $filtervalue="";
                             $result=mysqli_query($con,$sql);
+                            $total=mysqli_num_rows($result);
+
                            }  
                         ?>
                   
@@ -124,6 +128,9 @@
                         </thead>
                   
                       <?php
+                       if($total>0)
+                        {
+                                                  
                         while($rows=mysqli_fetch_object($result))
                         {
                       ?>
@@ -146,6 +153,9 @@
                           </tr>
                         <?php
                           }
+                         }else{
+                          echo "<h1 class='text-lg'>No Data Present</h1>";
+                         }
                         ?>
                         </tbody>
                       </table>

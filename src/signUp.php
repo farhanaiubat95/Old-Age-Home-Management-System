@@ -68,11 +68,11 @@ require_once("connect.php");
            <!--=====================
              Form Part Start
            ======================-->  
-          <div class="max-w-5xl mx-auto p-10 bg-black/75 shadow-xl md:hover:scale-105 transition duration-500">
+          <div class="max-w-5xl mx-auto p-10 bg-black/75 shadow-xl lg:hover:scale-105 transition duration-500">
             <div class="bg-primary text-center text-white p-2 text-xl font-bold mb-10"><h1>Registration Form</h1></div>
             <!-- Form Start-->
             <div>
-                <form action="#" class="flex flex-col justify-between gap-10">
+                <form action="insertsignup.php" method="POST" enctype="multipart/form-data" class="flex flex-col justify-between gap-10">
                     <!-- form design Start-->
                      <div class="flex flex-col md:flex-row justify-between gap-10">
                         <!-- div1 -->
@@ -113,7 +113,7 @@ require_once("connect.php");
                               <option value="none" selected disabled hidden>Select</option>
                               <option value="Bangladeshi">Bangladeshi</option>
                            </select>
-                      </div>                   
+                       </div>                   
   
                       <div class="flex flex-col"> 
                           <label class="form-lebel">Uploade Image :</label> 
@@ -125,11 +125,11 @@ require_once("connect.php");
                           <textarea  rows="1"  class="form-input" type="textarea" placeholder="give correct address" name="address"></textarea>
                       </div>
                          
-                      </div>
-                      <!-- div1 -->
+                    </div>
+                    <!-- div1 -->
         
-                      <!-- div2 -->
-                      <div class="md:w-1/2 flex flex-col gap-4">  
+                    <!-- div2 -->
+                     <div class="md:w-1/2 flex flex-col gap-4">  
   
                           <div class="flex justify-between gap-5">
                               <div class="flex flex-col w-1/2"> 
@@ -174,7 +174,7 @@ require_once("connect.php");
                           <div class="flex justify-between gap-5">
                               <div class="w-1/2 flex flex-col"> 
                                   <label class="form-lebel">Relation :</label> 
-                                  <select class="form-input" name="relationn" id="marital">
+                                  <select class="form-input" name="relation" id="marital">
                                       <option value="none" selected disabled hidden>Select</option>
                                       <option value="Father">Father</option>
                                       <option value="Mother">Mother</option>
@@ -200,7 +200,7 @@ require_once("connect.php");
   
                           <div class="flex flex-col"> 
                               <label class="form-lebel">Address :</label> 
-                              <textarea class="form-input" id="textarea1" placeholder=" full address" rows="1" name="ug_add"></textarea>
+                              <textarea class="form-input" id="textarea1" placeholder=" full address" rows="1" name="ug_address"></textarea>
                           </div>
   
                           <div class="flex flex-col"> 

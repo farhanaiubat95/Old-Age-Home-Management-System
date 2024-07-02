@@ -69,7 +69,7 @@
 }
 
 .about-image{
-    background:url(../image/about.png);
+    background:url(./image/about.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -79,7 +79,7 @@
     @apply text-xl text-Secondary  hover:text-2xl transition duration-500 ease-out hover:ease-in
 }
 .contact-image{
-    background:url(../image/contact1.jpg);
+    background:url(./image/contact1.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -93,7 +93,7 @@
 }
 
 .form-input{
-    @apply bg-transparent border p-2 rounded-md focus:outline-none placeholder:text-white text-Secondary text-sm
+    @apply bg-transparent border hover:scale-y-105 shadow hover:shadow-gray-300 p-2 rounded-md focus:outline-none placeholder:text-white text-Secondary text-sm
 }
 .form-lebel{
     @apply font-bold block text-Secondary text-lg pb-1

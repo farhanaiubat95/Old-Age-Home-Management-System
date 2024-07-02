@@ -1845,7 +1845,7 @@ video {
 }
 
 .about-image{
-  background:url(../image/about.png);
+  background:url(./image/about.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1871,7 +1871,7 @@ video {
 }
 
 .contact-image{
-  background:url(../image/contact1.jpg);
+  background:url(./image/contact1.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1893,6 +1893,9 @@ video {
   line-height: 1.25rem;
   --tw-text-opacity: 1;
   color: rgb(154 184 189 / var(--tw-text-opacity));
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .form-input::-moz-placeholder {
@@ -1903,6 +1906,13 @@ video {
 .form-input::placeholder {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.form-input:hover {
+  --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-shadow-color: #d1d5db;
+  --tw-shadow: var(--tw-shadow-colored);
 }
 
 .form-input:focus {
@@ -2555,6 +2565,12 @@ video {
 
   .lg\:pt-48 {
     padding-top: 12rem;
+  }
+
+  .lg\:hover\:scale-105:hover {
+    --tw-scale-x: 1.05;
+    --tw-scale-y: 1.05;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 }
 
