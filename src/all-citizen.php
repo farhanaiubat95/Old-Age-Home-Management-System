@@ -1,4 +1,9 @@
+<?php
+require_once("connect.php");
 
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,11 +84,11 @@
                 <div class="h-[100vh] overflow-scroll no-scrollbar">
                 <!-- Common for all part -->
 
-                 <!-- this table for lg to upper version Start -->
+                 <!--== this table for lg to upper version Start ==-->
                  <div class="hidden lg:block">
                   
                 <?php
-                        require_once("connect.php"); 
+                 
                            if(isset($_POST['search']))
                            {
                             $filtervalue=$_POST['query'];
@@ -161,78 +166,78 @@
                       </table>
                       <!-- Table end -->
                  </div>
-                  <!-- this table for lg to upper version done -->
+                  <!--== this table for lg to upper version done ==-->
 
-                  <!-- this table for mobile version done -->
-                  <div class="block lg:hidden">
-                  
-          
-                  <?php
-                        require_once("connect.php"); 
-                           if(isset($_POST['search']))
-                           {
-                            $filtervalue=$_POST['query'];
-                            $sql="SELECT * FROM tb_userlog WHERE CONCAT(u_id,u_username,u_phonenum,u_email,u_address,u_national) LIKE '%$filtervalue%'";
-                            $result=mysqli_query($con,$sql);
-                           }else
-                           {
-                            $sql="SELECT * FROM tb_userlog";
-                            $filtervalue="";
-                            $result=mysqli_query($con,$sql);
-                           }  
-                        ?>
-                  
-              <!-- Search option -->
-                <div class="py-5">
-                    <form action="" method="POST" enctype="multipart/data-form">
-                      <input type="text" class="search-input hidden-print"  name="query" value="<?php echo $filtervalue;?>" placeholder="search">
-                      <button class="search-btn hidden-print" type="submit" name="search"><i class="hover:scale-125 font-bold fa-solid fa-magnifying-glass"></i></button>
-                    </form>
-                </div>
-                
-              <!-- Search option -->
-         <div class="grid ">   
-             <?php 
-             while($rows= mysqli_fetch_object($result)) {
-             ?>
-            
-                      <!-- table-Card start -->
-                     
-                      <div class="p-5 bg-gray-300 rounded-md my-2">
-                         <div class="flex justify-between py-2">
-                            <div class="font-semibold text-[16px]">              
-                              <h1>ID: <span class="font-thin pl-1"><?php echo $rows->u_id ?></span></h1>
-                              <h1>Username: <span class="font-thin pl-1"><?php echo $rows->u_username ?></span></h1>
-                              <h1>Phone: <span class="font-thin pl-1"><?php echo $rows->u_phonenum ?></span></h1>
-                              <h1>Email: <span class="font-thin pl-1"><?php echo $rows->u_email ?></span></h1>
-                              <h1>Address: <span class="font-thin pl-1"><?php echo $rows->u_address ?></span></h1>
-                              <h1>NID: <span class="font-thin pl-1"><?php echo $rows->u_national ?></span></h1>
-                              <h1>Registration Date: <span class="font-thin pl-1"><?php echo $rows->u_registrationdate ?></span></h1>
-                            </div>
-                            <div>
-                                <img class="h-32 w-28 sm:h-44 sm:w-44 border-2 border-black" src="<?php echo $rows->u_image ?>" alt="">
-                            </div>
-                         </div>
-                         <div class="flex items-center gap-1">
-                            <a class="p-1 bg-[#0A6847] hover:bg-[#0A6847]/50 rounded" href="#"><i class='text-white fa-solid fa-eye fa-lg'></i></a> 
-                            <a class="p-1 bg-[#DD761C] hover:bg-[#DD761C]/50 rounded" href="#"><i class="text-white px-1 fas fa-edit"></i></a>
-                            <a class="p-1 bg-[#3572EF] hover:bg-[#3572EF]/50 rounded" href="#"><i class='text-white px-1 fa-solid fa-trash'></i></a>
-                         </div>
-                       </div>
+
+                  <!--== this table for mobile version done ==-->
+                      <div class="block lg:hidden">
+        
                       <?php
-             }
-            
-           ?>
-    
+                            
+                              if(isset($_POST['search']))
+                              {
+                                $filtervalue=$_POST['query'];
+                                $sql="SELECT * FROM tb_userlog WHERE CONCAT(u_id,u_username,u_phonenum,u_email,u_address,u_national) LIKE '%$filtervalue%'";
+                                $result=mysqli_query($con,$sql);
+                              }else
+                              {
+                                $sql="SELECT * FROM tb_userlog";
+                                $filtervalue="";
+                                $result=mysqli_query($con,$sql);
+                              }  
+                            ?>
+                      
+                  <!-- Search option -->
+                    <div class="py-5">
+                        <form action="" method="POST" enctype="multipart/data-form">
+                          <input type="text" class="search-input hidden-print"  name="query" value="<?php echo $filtervalue;?>" placeholder="search">
+                          <button class="search-btn hidden-print" type="submit" name="search"><i class="hover:scale-125 font-bold fa-solid fa-magnifying-glass"></i></button>
+                        </form>
+                    </div> 
+                  <!-- Search option -->
+                   
+            <div class="grid ">   
+                <?php 
+                while($rows= mysqli_fetch_object($result)) {
+                ?>
+                
+                          <!-- table-Card start -->
+                        
+                          <div class="p-5 bg-gray-300 rounded-md my-2">
+                            <div class="flex justify-between py-2">
+                                <div class="font-semibold text-[16px]">              
+                                  <h1>ID: <span class="font-thin pl-1"><?php echo $rows->u_id ?></span></h1>
+                                  <h1>Username: <span class="font-thin pl-1"><?php echo $rows->u_username ?></span></h1>
+                                  <h1>Phone: <span class="font-thin pl-1"><?php echo $rows->u_phonenum ?></span></h1>
+                                  <h1>Email: <span class="font-thin pl-1"><?php echo $rows->u_email ?></span></h1>
+                                  <h1>Address: <span class="font-thin pl-1"><?php echo $rows->u_address ?></span></h1>
+                                  <h1>NID: <span class="font-thin pl-1"><?php echo $rows->u_national ?></span></h1>
+                                  <h1>Registration Date: <span class="font-thin pl-1"><?php echo $rows->u_registrationdate ?></span></h1>
+                                </div>
+                                <div>
+                                    <img class="h-32 w-28 sm:h-44 sm:w-44 border-2 border-black" src="<?php echo $rows->u_image ?>" alt="">
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <a class="p-1 bg-[#0A6847] hover:bg-[#0A6847]/50 rounded" href="#"><i class='text-white fa-solid fa-eye fa-lg'></i></a> 
+                                <a class="p-1 bg-[#DD761C] hover:bg-[#DD761C]/50 rounded" href="#"><i class="text-white px-1 fas fa-edit"></i></a>
+                                <a class="p-1 bg-[#3572EF] hover:bg-[#3572EF]/50 rounded" href="#"><i class='text-white px-1 fa-solid fa-trash'></i></a>
+                            </div>
+                          </div>
+                          <?php
+                }
+                
+              ?>
+        
 
-       
-                    <!-- table-Card start -->
+          
+                        <!-- table-Card start -->
 
-                   </div> 
-                 
-                  
-                 </div>
-                  <!-- this table for mobile version done -->
+                      </div> 
+                    
+                      
+                    </div>
+                  <!--== this table for mobile version done ==-->
 
 
                  <!-- Common for all part -->

@@ -1,5 +1,38 @@
-<?php
-require_once("connect.php");
+<?php 
+  require("connect.php");
+
+
+  if(isset($_POST['Signin']))
+  {
+
+    $username=$_POST["adminuserName"];
+    $password=$_POST["AdminPassword"];
+
+    $sql="select * from `tb_admin` where a_user='".$username."' AND admin_pass='".$password."'";
+
+    $result=mysqli_query($con,$sql);
+    $total=mysqli_num_rows($result);
+    if($total==1)
+    {
+      session_start();
+      $rows=mysqli_fetch_assoc($result);
+      $_SESSION[`Adnibid`]=$rows['id'];
+      echo"
+      <script>
+      alert('Log in successfully'); 
+      window.location.href='dashboard.php';
+      </script>
+      ";
+    }else{
+      echo"
+      <script>
+      alert('Not log in,Please give correct username and password..'); 
+      window.location.href='adminlogin.php';
+      </script>
+      ";
+    }
+  }
+  
 
 ?>
 <!DOCTYPE html>
@@ -75,20 +108,20 @@ require_once("connect.php");
                    <h1>Admin Login</h1>
                 </div>
                 <div>
-                  <form action="#" class="flex flex-col gap-7">
+                  <form action="#" method="POST" class="flex flex-col gap-7">
                      <div class="flex flex-col"> 
                          <label class="font-bold block text-Secondary text-lg pb-1">User Name :</label> 
-                         <input class="form-input" type="text" placeholder="@alex95" name="user">
+                         <input class="form-input" type="text" placeholder="@alex95" name="adminuserName">
                      </div>
  
                      <div class="flex flex-col"> 
                          <label class="font-bold block text-Secondary text-lg pb-1">Password :</label> 
-                         <input class="form-input" type="text" placeholder=" enter correct password" name="pass">
+                         <input class="form-input" type="text" placeholder=" enter correct password" name="AdminPassword">
                      </div>
  
                      <!-- Button -->
                      <div class="submit-btn">
-                         <button>Register Now</button>
+                         <button name="Signin">Register Now</button>
                       </div>
                   </form>
 

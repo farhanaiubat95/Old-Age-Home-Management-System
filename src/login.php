@@ -1,5 +1,34 @@
+
 <?php
-require_once("connect.php");
+  require("connect.php");
+
+
+if(isset($_POST['userlog']))
+{
+  $username=$_POST["user"];
+  $password=$_POST["pass"];
+
+    $sql="select * from `tb_userlog` where u_username ='".$username."' AND u_password='".$password."'";
+
+    $result=mysqli_query($con,$sql);
+    if(mysqli_num_rows($result)==1)
+    {
+      session_start();
+      $_SESSION[`useridname`]=$_POST["user"];
+      echo"
+      <script>
+      alert('Log in successfully'); 
+      window.location.href='userpannel.php';
+      </script>
+      ";
+    }else{
+      echo"
+      <script>
+      alert('Not login'); 
+      </script>
+      ";
+    }
+}
 
 ?>
 <!DOCTYPE html>
@@ -75,7 +104,7 @@ require_once("connect.php");
                    <h1>User Login</h1>
                 </div>
                 <div>
-                  <form action="#" class="flex flex-col gap-7">
+                  <form action="#" method="POST" class="flex flex-col gap-7">
                      <div class="flex flex-col"> 
                          <label class="font-bold block text-Secondary text-lg pb-1">User Name :</label> 
                          <input class="form-input" type="text" placeholder="@alex95" name="user">
@@ -88,7 +117,7 @@ require_once("connect.php");
  
                      <!-- Button -->
                      <div class="submit-btn">
-                         <button>Register Now</button>
+                         <button name="userlog">Register Now</button>
                       </div>
                   </form>
 
