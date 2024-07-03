@@ -11,7 +11,7 @@ require_once("connect.php");
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="shortcut icon" href="../image/logo1.png" type="image/x-icon">
     <link rel="stylesheet" href="./output.css">
-    <title>Add Citizen || Sunnah</title>
+    <title>Add admin || Sunnah</title>
 </head>
 <body class="body w-screen min-h-screen bg-5th font-roboto flex flex-col overflow-hidden">
 
@@ -69,7 +69,7 @@ require_once("connect.php");
 
             <!-- Panel Header Start-->
                <div class="bg-gray-300 flex-none h-12 md:h-14 flex justify-between items-center px-2 sm:px-5 text-lg border border-gray-400 shadow-md">
-                    <div><p class="text-gray-500">Home / Add New Citizen</p></div>
+                    <div><p class="text-gray-500">Home / Add Admin</p></div>
                     <div>
                         <a class="p-2 font-bold bg-red-900 text-white hover:bg-red-950" href="logout.php"><span><i class="fa-solid fa-right-from-bracket"></i></span> Logout</a>
                     </div>
@@ -86,7 +86,7 @@ require_once("connect.php");
             
             <!-- Form Start-->
             <div class="h-[100vh] overflow-scroll no-scrollbar">
-                <form form action="insertsignup.php" method="POST" enctype="multipart/form-data" class="flex flex-col justify-between gap-10">
+                <form form action="insertAdmin.php" method="POST" enctype="multipart/form-data" class="flex flex-col justify-between gap-10">
                     <!-- form design Start-->
                      <div class="flex flex-col md:flex-row justify-between gap-10">
                         <!-- div1 -->

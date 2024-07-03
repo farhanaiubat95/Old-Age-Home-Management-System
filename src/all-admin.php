@@ -72,43 +72,61 @@ session_start();
                <div class="bg-gray-300 flex-none h-12 md:h-14 flex justify-between items-center px-2 sm:px-5 text-lg border border-gray-400 shadow-md">
                     <div><p class="text-gray-500">Home / All Admin Details</p></div>
                     <div>
-                        <a class="p-2 font-bold bg-primary text-white hover:bg-primary/75" href="add-doctor.php"><span><i class="fa-solid fa-plus"></i></span>  Add Admin</a>
+                        <a class="p-2 font-bold bg-primary text-white hover:bg-primary/75" href="add-admin.php"><span><i class="fa-solid fa-plus"></i></span>  Add Admin</a>
                         <a class="p-2 font-bold bg-red-900 text-white hover:bg-red-950" href="logout.php"><span><i class="fa-solid fa-right-from-bracket"></i></span> Logout</a>
                     </div>
                </div>
             <!-- Panel Header End-->
    
             <!-- Panel Body Start-->
-               <div class="bg-white grow p-3 border-x border-b border-gray-400 overflow-hidden">
+               <div class="bg-gray-100 grow p-3 border-x border-b border-gray-400 overflow-hidden">
                 <div class="h-[100vh] overflow-scroll no-scrollbar">
                 <!-- Common for all part -->
 
                   <!-- this table for all version done -->
                   <div>
+                  <?php
+                            
+                              if(isset($_POST['search']))
+                              {
+                                $filtervalue=$_POST['query'];
+                                $sql="SELECT * FROM tb_admin WHERE CONCAT(id,a_user) LIKE '%$filtervalue%'";
+                                $result=mysqli_query($con,$sql);
+                              }else
+                              {
+                                $sql="SELECT * FROM tb_admin";
+                                $filtervalue="";
+                                $result=mysqli_query($con,$sql);
+                              }  
+                  ?>
                     <!-- Search option -->
                     <div class="py-5">
                         <form action="" method="POST" enctype="multipart/data-form">
-                          <input type="text" class="search-input hidden-print"  name="query" value="" placeholder="search">
+                          <input type="text" class="search-input hidden-print"  name="query" value="" placeholder="search by id">
                           <button class="search-btn hidden-print" type="submit" name="search"><i class="hover:scale-125 font-bold fa-solid fa-magnifying-glass"></i></button>
                         </form>
                     </div>   
                   <!-- Search option -->
 
                   <!-- Card Part Start -->
-                   <div class="grid grid-cols-4 gap-4">
+                   <div class="grid grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-4">
+
+                    <?php while($rows=mysqli_fetch_object($result)){ ?>
+
                      <!-- Card Start-->
-                     <div class="p-5 border border-primary shadow-md shadow-gray-400 bg-primary/25">
+                     <div class="p-5 border border-primary shadow-md shadow-primary/50 bg-gray-500/25">
                         <div class="flex flex-col justify-center items-center" >
-                            <img class="rounded-full shadow-xl shadow-gray-400 w-52 h-52" src="./image/arifa.jpg" alt="">
+                            <img class="rounded-full shadow-xl shadow-gray-400 w-52 h-52" src="<?php echo $rows->admin_name ?>" alt="">
                         </div>
-                        <div class="text-center font-semibold text-lg text-primary py-5">
-                            <p class="text-2xl font-bold">Farhana Bente Islam</p>
-                            <p class="text-blue-500">23546546</p>
-                            <p class="text-black">asjhdfskch@ljlk</p>
+                        <div class="text-center font-semibold text-lg text-7th py-5">
+                            <p class="text-2xl font-bold"><?php echo $rows->admin_name ?></p>
+                            <p class="text-blue-500"><?php echo $rows->id ?></p>
+                            <p class="text-black"><?php echo $rows->admin_email ?></p>
                             <h1 class=" mt-5 border-2 bg-gray-400/50 border-primary/50 py-2 shadow-md shadow-gray-400 hover:bg-primary/50 hover:text-white transition duration-300"><a href="" class="">View Profile</a></h1>
                         </div>
                       </div>
                      <!-- Card End-->
+                    <?php } ?>
                    </div>
                   <!-- Card Part end -->
 
