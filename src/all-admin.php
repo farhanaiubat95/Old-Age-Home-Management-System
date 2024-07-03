@@ -95,8 +95,20 @@ session_start();
                   <!-- Search option -->
 
                   <!-- Card Part Start -->
-                   <div class="grid grid-cols-4">
-                    
+                   <div class="grid grid-cols-4 gap-4">
+                     <!-- Card Start-->
+                     <div class="p-5 border border-primary shadow-md shadow-gray-400 bg-primary/25">
+                        <div class="flex flex-col justify-center items-center" >
+                            <img class="rounded-full shadow-xl shadow-gray-400 w-52 h-52" src="./image/arifa.jpg" alt="">
+                        </div>
+                        <div class="text-center font-semibold text-lg text-primary py-5">
+                            <p class="text-2xl font-bold">Farhana Bente Islam</p>
+                            <p class="text-blue-500">23546546</p>
+                            <p class="text-black">asjhdfskch@ljlk</p>
+                            <h1 class=" mt-5 border-2 bg-gray-400/50 border-primary/50 py-2 shadow-md shadow-gray-400 hover:bg-primary/50 hover:text-white transition duration-300"><a href="" class="">View Profile</a></h1>
+                        </div>
+                      </div>
+                     <!-- Card End-->
                    </div>
                   <!-- Card Part end -->
 
