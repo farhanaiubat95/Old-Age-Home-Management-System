@@ -99,7 +99,7 @@
     @apply font-bold block text-Secondary text-lg pb-1
 }
 .submit-btn{
-    @apply text-lg text-primary hover:text-Secondary font-bold py-1 rounded-md bg-Secondary text-center border-2 border-transparent hover:border-Secondary hover:bg-transparent
+    @apply text-lg my-5  text-primary hover:text-Secondary font-bold py-1 rounded-md bg-Secondary text-center border-2 border-transparent hover:border-Secondary hover:bg-transparent
 }
 .login-image{
     background:url(../image/admin-log.jpg);

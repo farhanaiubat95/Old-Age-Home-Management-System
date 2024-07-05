@@ -77,18 +77,18 @@ session_start();
             <!-- Panel Header End-->
    
             <!-- Panel Body Start-->
-               <div class="bg-gray-200 grow p-3 border-x border-b border-gray-400 overflow-hidden">
-                <div class="h-[100vh] overflow-scroll no-scrollbar">
+               <div class="bg-gray-200 grow  pt-5  border-x border-b border-gray-400 overflow-hidden">
+                <div class="h-[100vh]">
                 <!-- Common for all part -->
 
                 <!-- add citizen form start-->
                 <div class=" p-10 shadow-xl ">
             
             <!-- Form Start-->
-            <div class="h-[100vh] overflow-scroll no-scrollbar">
-                <form form action="insertAdmin.php" method="POST" enctype="multipart/form-data" >
+            <div class="h-[100vh] pb-52 overflow-scroll no-scrollbar">
+                <form form action="insertAdmin.php" method="POST" enctype="multipart/form-data" class=" lg:max-w-5xl lg:mx-auto mb-10">
                     <!-- form design Start-->
-                     <div class=" lg:max-w-5xl lg:mx-auto">
+                     <div >
                         <!-- div1 -->
                     <div class="w-full flex flex-col gap-4">
                         <div class="flex flex-col"> 
@@ -150,10 +150,6 @@ session_start();
                   </form>   
             </div>
             <!-- Form End-->
-
-            <div class="bg-primary mt-6 font-bold text-Secondary text-sm">
-                <marquee class="px-3"  behavior="slide" direction="left">Please give all the correct information</marquee>
-             </div>
 
           </div>
 
