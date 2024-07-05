@@ -85,8 +85,7 @@ session_start();
 
                   <!-- this table for all version done -->
                   <div>
-                  <?php
-                            
+                  <?php         
                               if(isset($_POST['search']))
                               {
                                 $filtervalue=$_POST['query'];
@@ -109,14 +108,14 @@ session_start();
                   <!-- Search option -->
 
                   <!-- Card Part Start -->
-                   <div class="grid grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                   <div class="grid sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-4">
 
                     <?php while($rows=mysqli_fetch_object($result)){ ?>
 
                      <!-- Card Start-->
                      <div class="p-5 border border-primary shadow-md shadow-primary/50 bg-gray-500/25">
                         <div class="flex flex-col justify-center items-center" >
-                            <img class="rounded-full shadow-xl shadow-gray-400 w-52 h-52" src="<?php echo $rows->admin_name ?>" alt="">
+                            <img class="rounded-full shadow-xl shadow-gray-400 w-52 h-52" src="<?php echo $rows->admin_image ?>" alt="">
                         </div>
                         <div class="text-center font-semibold text-lg text-7th py-5">
                             <p class="text-2xl font-bold"><?php echo $rows->admin_name ?></p>

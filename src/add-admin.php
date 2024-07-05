@@ -1,5 +1,5 @@
 <?php
-require_once("connect.php");
+session_start();
 
 ?>
 <!DOCTYPE html>
@@ -77,7 +77,7 @@ require_once("connect.php");
             <!-- Panel Header End-->
    
             <!-- Panel Body Start-->
-               <div class="bg-primary/25 grow p-3 border-x border-b border-gray-400 overflow-hidden">
+               <div class="bg-gray-200 grow p-3 border-x border-b border-gray-400 overflow-hidden">
                 <div class="h-[100vh] overflow-scroll no-scrollbar">
                 <!-- Common for all part -->
 
@@ -86,18 +86,18 @@ require_once("connect.php");
             
             <!-- Form Start-->
             <div class="h-[100vh] overflow-scroll no-scrollbar">
-                <form form action="insertAdmin.php" method="POST" enctype="multipart/form-data" class="flex flex-col justify-between gap-10">
+                <form form action="insertAdmin.php" method="POST" enctype="multipart/form-data" >
                     <!-- form design Start-->
-                     <div class="flex flex-col md:flex-row justify-between gap-10">
+                     <div class=" lg:max-w-5xl lg:mx-auto">
                         <!-- div1 -->
-                    <div class="md:w-1/2 flex flex-col gap-4">
+                    <div class="w-full flex flex-col gap-4">
                         <div class="flex flex-col"> 
-                            <label class="add-form-lebel">User Name :</label> 
+                            <label class="add-form-lebel">Admin User Name :</label> 
                             <input class="add-form-input" type="text" placeholder="@alex95" name="user">
                         </div>
         
                         <div class="flex flex-col"> 
-                            <label class="add-form-lebel">Full Name :</label> 
+                            <label class="add-form-lebel">Admin Full Name :</label> 
                             <input class="add-form-input" type="text" placeholder="give your full name" name="fullname">
                         </div>
         
@@ -120,15 +120,7 @@ require_once("connect.php");
                             <label class="add-form-lebel">National ID : <span class="text-[14px] text-gray-500">(if you have, then give carefully)</span></label> 
                             <input class="add-form-input" type="number" placeholder="011*********" name="nid">
                         </div>
-  
-                        <div class="flex flex-col"> 
-                          <label class="add-form-lebel">Citizenship:</label> 
-                          <select class="add-form-input" name="citizenship" id="citizenship">
-                              <option value="none" selected disabled hidden>Select</option>
-                              <option value="Bangladeshi">Bangladeshi</option>
-                           </select>
-                      </div>                   
-  
+
                       <div class="flex flex-col"> 
                           <label class="add-form-lebel">Uploade Image :</label> 
                           <input class="add-form-input" type="file" name="image">
@@ -138,98 +130,22 @@ require_once("connect.php");
                           <label class="add-form-lebel">Permanent address:</label> 
                           <textarea  rows="1"  class="add-form-input" type="textarea" placeholder="give correct address" name="address"></textarea>
                       </div>
+
+                      <div class="flex flex-col"> 
+                           <label class="add-form-lebel">Password :</label> 
+                           <input class="add-form-input" type="text" placeholder=" at least 6 character" name="pass">
+                      </div>
                          
                       </div>
                       <!-- div1 -->
         
-                      <!-- div2 -->
-                      <div class="md:w-1/2 flex flex-col gap-4">  
-  
-                          <div class="flex justify-between gap-5">
-                              <div class="flex flex-col w-1/2"> 
-                                  <label class="add-form-lebel">Gendar :</label> 
-                                  <select class="add-form-input" name="gender" id="gender">
-                                      <option value="none" selected disabled hidden>Select</option>
-                                      <option value="Male">Male</option>
-                                      <option value="Female">Female</option>
-                                      <option value="Others">Others</option>
-                                  </select>
-                              </div>
-      
-                              <div class="flex flex-col  w-1/2"> 
-                                  <label class="add-form-lebel">Marital Status:</label> 
-                                  <select class="add-form-input" name="marital" id="marital">
-                                      <option value="Single">Single</option>
-                                      <option value="Married">Married</option>
-                                      <option value="Widowed">Widowed</option>
-                                      <option value="Divorced">Divorced</option>
-                                  </select>
-                              </div>
-                          </div>
-  
-                          <div class="flex flex-col"> 
-                              <label class="add-form-lebel">Child :</label> 
-                              <input class="add-form-input" type="number" placeholder=" 0" name="childNum">
-                          </div>
-  
-                          <div class="flex flex-col"> 
-                              <label class="add-form-lebel">Password :</label> 
-                              <input class="add-form-input" type="text" placeholder=" at least 6 character" name="pass">
-                          </div>
-  
-                          <!-- Gurdian Part -->
-                          <div class="bg-Secondary text-center text-primary p-1 text-lg font-bold mt-8 mb-3"><h1>Power of Attorney/ Gurdian/ Conservators:</h1></div>
-  
-                          <div class="flex flex-col"> 
-                              <label class="add-form-lebel">Gurdian Name :</label> 
-                              <input class="add-form-input" type="text" placeholder=" full name" name="ug_name">
-                          </div>
-  
-                          <div class="flex justify-between gap-5">
-                              <div class="w-1/2 flex flex-col"> 
-                                  <label class="add-form-lebel">Relation :</label> 
-                                  <select class="add-form-input" name="relationn" id="marital">
-                                      <option value="none" selected disabled hidden>Select</option>
-                                      <option value="Father">Father</option>
-                                      <option value="Mother">Mother</option>
-                                      <option value="Child">Child</option>
-                                      <option value="Husband">Husband</option>
-                                      <option value="Wife">Wife</option>
-                                      <option value="Brother">Brother</option>
-                                      <option value="Sister">Sister</option>
-                                      <option value="Others">Others</option>
-                              </select>
-                              </div>
-      
-                              <div class="w-1/2 flex flex-col"> 
-                                  <label class="add-form-lebel">Phone Number :</label> 
-                                  <input class="add-form-input" type="number" placeholder=" 012*********" name="ug_num">
-                              </div>
-                          </div>
-  
-                          <div class="flex flex-col"> 
-                              <label class="add-form-lebel">Email id :</label> 
-                              <input class="add-form-input" type="email" placeholder=" alex@gmail.com" name="ug_email">
-                          </div>
-  
-                          <div class="flex flex-col"> 
-                              <label class="add-form-lebel">Address :</label> 
-                              <textarea class="add-form-input" id="textarea1" placeholder=" full address" rows="1" name="ug_add"></textarea>
-                          </div>
-  
-                          <div class="flex flex-col"> 
-                              <label class="add-form-lebel">Comments :</label> 
-                              <textarea class="add-form-input" id="textarea1" placeholder=" write your opinion" rows="1" name="ug_comments"></textarea>
-        
-                          </div>
-                      </div>
-                      <!-- div2 -->
+                
                      </div>
                     <!-- form design end-->
 
                     <!-- Button -->
                      <div class="submit-btn">
-                        <button>Register Now</button>
+                        <button>Submit</button>
                      </div>
                   </form>   
             </div>

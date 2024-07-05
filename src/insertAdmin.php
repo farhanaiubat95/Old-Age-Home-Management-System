@@ -12,20 +12,21 @@ if(!$con)
 //print_r($_FILES["image"]);
 $filename=$_FILES["image"]["name"];
 $tempname=$_FILES["image"]["tmp_name"];
-$folder="images/" .$filename;
+$folder="./images/" .$filename;
 //echo $folder;
 move_uploaded_file($tempname,$folder);
 
+$username=$_POST['user']; 
+$fullname=$_POST['fullname']; 
+$nid=$_POST['nid'];
+$phone=$_POST['phone'];
+$email=$_POST['email'];              
+$dob=$_POST['date'];
+$address=$_POST['address'];
+$pass=$_POST['pass'];
 
-$fullname=$_POST['a_fullname']; 
-$email=$_POST['a_email'];              
-$phone=$_POST['a_phone'];
-$national=$_POST['a_nid'];
-$address=$_POST['a_address'];
-$pass=$_POST['a_pass'];
 
-
-$sql="INSERT INTO `tb_admin`(`id`,`admin_name`,`admin_NID`,`admin_phone`,`admin_email`,`admin_address`, `admin_image`, `admin_pass`, `admin_regt_date`) VALUES ('null','$fullname','$national','$phone','$email','$address','$folder','$pass',current_timestamp)";
+$sql="INSERT INTO `tb_admin`(`id`, `a_user`, `admin_name`, `admin_NID`, `admin_phone`, `admin_email`, `dob`, `admin_address`, `admin_image`, `admin_pass`, `admin_regt_date`) VALUES ('null','$username','$fullname','$nid','$phone','$email','$dob','$address','$folder','$pass',current_timestamp)";
 
 
 if(mysqli_query($con,$sql))
