@@ -35,7 +35,7 @@ if(mysqli_query($con,$sql))
   echo"
   <script>
   alert('Registered successfully');
-  window.location.href='all-admin.php';
+  window.location.href='all-doctors.php';
   </script>
   ";
 }
@@ -43,7 +43,7 @@ else{
   echo"
   <script>
   alert('Not Inserted. Check again');
-  window.location.href='add-admin.php';
+  window.location.href='add-doctor.php';
   </script>
   ";
 }
