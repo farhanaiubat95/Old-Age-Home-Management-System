@@ -31,7 +31,6 @@ $sql="INSERT INTO `tb_doctor`(`id`, `d_user`, `d_name`, `d_NID`, `d_phone`, `d_e
 
 if(mysqli_query($con,$sql))
 {
-  session_start();
   echo"
   <script>
   alert('Registered successfully');
