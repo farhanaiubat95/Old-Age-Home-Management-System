@@ -67,10 +67,9 @@ session_start();
         <!--== Panel Part Start ==-->
         <div class=" grow flex flex-col md:p-2 md:absolute md:right-0 md:bottom-0 md:top-0 md:left-64">
 <!-- ***************** -->
-
             <!-- Panel Header Start-->
                <div class="bg-gray-300 flex-none h-12 md:h-14 flex justify-between items-center px-2 sm:px-5 text-lg border border-gray-400 shadow-md">
-                    <div><p class="text-gray-500">Home / Dashboard</p></div>
+                    <div><p class="text-gray-500">Home / All Doctors</p></div>
                     <div>
                         <a class="p-2 font-bold bg-primary text-white hover:bg-primary/75" href="add-doctor.php"><span><i class="fa-solid fa-plus"></i></span>  Add Doctors</a>
                         <a class="p-2 font-bold bg-red-900 text-white hover:bg-red-950" href="logout.php"><span><i class="fa-solid fa-right-from-bracket"></i></span> Logout</a>
@@ -79,12 +78,77 @@ session_start();
             <!-- Panel Header End-->
    
             <!-- Panel Body Start-->
-               <div class="bg-primary/25 grow p-3 border-x border-b border-gray-400 overflow-hidden">
+               <div class="bg-[#050A30]/25 grow p-3 border-x border-b border-gray-400 overflow-hidden">
                 <div class="h-[100vh] overflow-scroll no-scrollbar">
                 <!-- Common for all part -->
+                <?php         
+                              if(isset($_POST['search']))
+                              {
+                                $filtervalue=$_POST['query'];
+                                $sql="SELECT * FROM `tb_doctor` WHERE CONCAT(id,d_user,d_name) LIKE '%$filtervalue%'";
+                                $result=mysqli_query($con,$sql);  
+                            
+                              }else
+                              {
+                                $sql="SELECT * FROM `tb_doctor`";
+                                $filtervalue="";
+                                $result=mysqli_query($con,$sql);
+                            
+                              } 
+                            
+                             
+                  ?>
+                    <!-- Search option -->
+                    <div class="py-5">
+                        <form action="" method="POST" enctype="multipart/data-form">
+                          <input type="text" class="search-input hidden-print"  name="query" value="" placeholder="search">
+                          <button class="search-btn hidden-print" type="submit" name="search"><i class="hover:scale-125 font-bold fa-solid fa-magnifying-glass"></i></button>
+                        </form>
+                    </div>   
+                  <!-- Search option -->
 
                   <!-- this table for all version done -->
-                
+                  <div class="grid sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4  gap-4">
+                  <?php while($rows=mysqli_fetch_object($result)){  
+                             $dateofbirth= $rows->dob ; 
+                             $today= date("Y-m-d");
+                             $diff= date_diff(date_create($dateofbirth), date_create($today));
+                             $age= $diff->format('%y');  
+                  ?>
+                   <!-- Card Start -->
+                    <div class="bg-white p-4 border border-gray-400 shadow-md shadow-gray-300">
+                        <img class="h-80 w-full border border-gray-400" src="<?php echo $rows->d_image ?>" alt="">
+                        <div class="text-lg font-semibold text-gray-400 px-3 pb-5">
+                          <div class="text-center font-bold text-2xl text-gray-500 pb-5"><h1><?php echo $rows->d_name ?></h1></div>
+                          <div class="flex justify-between">
+                            <h3>User Name :</h3>
+                            <h3><?php echo $rows->d_user ?></h3>
+                          </div>
+                          <div class="flex justify-between">
+                            <h3>ID :</h3>
+                            <h3><?php echo $rows->id ?></h3>
+                          </div>
+                          <div class="flex justify-between">
+                            <h3>Phone No :</h3>
+                            <h3><?php echo $rows->d_phone ?></h3>
+                          </div>
+                          <div class="flex justify-between">
+                            <h3>Email :</h3>
+                            <h3><?php echo $rows->d_email ?></h3>
+                          </div>
+                          <div class="flex justify-between">
+                            <h3>Age :</h3>
+                            <h3><?php echo $age ?></h3>
+                          </div>
+                        </div>
+
+                        <div class="transition duration-500 ease-out hover:ease-in border hover:bg-primary py-2 text-center text-primary hover:text-white font-bold">
+                            <a class="hover:scale-125 text-lg" href="#">View Profile</a>
+                        </div>
+                    </div>
+                   <!-- Card end -->
+                   <?php } ?>
+                  </div>
                   <!-- this table for all version done -->
 
 
@@ -97,7 +161,7 @@ session_start();
 <!-- ******************* -->
       
       </div>
-           <!--== Panel Part Start ==-->
+           <!--== Panel Part end ==-->
      </div>
     
     <!--=====================
