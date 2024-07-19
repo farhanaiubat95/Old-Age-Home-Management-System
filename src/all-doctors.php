@@ -108,7 +108,7 @@ session_start();
                   <!-- Search option -->
 
                   <!-- this table for all version done -->
-                  <div class="grid sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4  gap-4">
+                  <div class="grid sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-5  gap-4">
                   <?php while($rows=mysqli_fetch_object($result)){  
                              $dateofbirth= $rows->dob ; 
                              $today= date("Y-m-d");
@@ -117,7 +117,7 @@ session_start();
                   ?>
                    <!-- Card Start -->
                     <div class="bg-white p-4 border border-gray-400 shadow-md shadow-gray-300">
-                        <img class="h-80 w-full border border-gray-400" src="<?php echo $rows->d_image ?>" alt="">
+                        <img class="h-60 w-full border border-gray-400" src="<?php echo $rows->d_image ?>" alt="">
                         <div class="text-lg font-semibold text-gray-400 px-3 pb-5">
                           <div class="text-center font-bold text-2xl text-gray-500 pb-5"><h1><?php echo $rows->d_name ?></h1></div>
                           <div class="flex justify-between">
